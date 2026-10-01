@@ -1,8 +1,39 @@
 package oop.points;
 
+import fileworks.DataImport;
+
+import java.util.ArrayList;
+
 public class Points {
     public static void main(String[] args) {
+        DataImport di = new DataImport("data/points.txt");
+        ArrayList<Point> points = new ArrayList<>();
+        String[] cutLine;
 
+        while (di.hasNext()){
+            cutLine = di.readLine().split(",");
+            switch (cutLine.length){
+                case 2: points.add(new Point(Double.parseDouble(cutLine[0]), Double.parseDouble(cutLine[1])));
+                    break;
+                case 3: points.add(new Point(cutLine[0], Double.parseDouble(cutLine[1]), Double.parseDouble(cutLine[2])));
+                    break;
+                case 4: points.add(new Point(cutLine[0], Double.parseDouble(cutLine[1]), Double.parseDouble(cutLine[2]), Double.parseDouble(cutLine[3])));
+                    break;
+
+            }
+
+        }
+        for (Point p : points){
+            System.out.println(p.toString());
+        }
+
+
+
+
+
+
+
+        di.finishImport();
     }
 }
 
