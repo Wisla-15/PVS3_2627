@@ -30,6 +30,7 @@ class Surgeon extends Doctor {
     }
 }
 
+
 class CardiacSurgeon extends Surgeon {
     protected final static int CS_BONUS = 35000;
 

@@ -1,19 +1,19 @@
 package oop.inheritance.hunters;
 
-public class Witcher extends Soldier {
+public class Witcher extends Soldier{
     public Witcher(String name) {
         super(name);
-        gold += 50;
+        golds += 50;
     }
 
-    public void slayMonster() {
-        System.out.println(name + " is hunting for a monster.");
-        gold += 250;
+    public void killMonster(){
+        System.out.println(name + " is killing monster");
+        golds += 50;
     }
 
     @Override
-    public void hunt() {
-        System.out.println(name + " is hunting a beast... and he's very good at it.");
-        gold += 50;
+    void hunt() {
+        System.out.println(name + " is hunting beast and hes good");
+        golds+= 50;
     }
 }

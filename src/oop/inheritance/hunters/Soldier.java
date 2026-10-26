@@ -1,13 +1,16 @@
 package oop.inheritance.hunters;
 
 public class Soldier extends Hunter{
+    protected final int SOLDIER_DEFAULT_BONUS = 10;
+
     public Soldier(String name) {
         super(name);
-        gold += 40;
+        golds += 40;
+
     }
 
-    void killBandits(){
-        System.out.println(name + " is going againts bandits.");
-        gold += 100;
+    public void killBandit(){
+        System.out.println(name + " is kiling bandít");
+        golds += 100;
     }
 }
